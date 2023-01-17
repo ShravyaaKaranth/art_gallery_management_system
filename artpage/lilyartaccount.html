@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="popup.css">
+		<script src="popup.js"></script>
 	</head>
 	<body class="is-preload-0 is-preload-1 is-preload-2">
 
@@ -21,83 +23,60 @@
 				<!-- Header -->
 					<header id="header">
 						<h1>LilyPichu</h1>
-						<ul class="icons">
-							<li><a href="https://www.twitch.tv/lilypichu" class="icon brands fa-twitch" target="_blank"><span class="label">Twitch</span></a></li>
-							<li><a href="https://www.instagram.com/lilypichu/?hl=en" class="icon brands fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
-							<li><a href="lilypichu@gmail.com" class="icon fa-envelope" target="_blank"><span class="label">Email</span></a></li>
-						</ul>
+						<br><br>
+						
 					</header>
+					
+					<div>
+					<button class="open-button" onclick="openForm()">Upload</button>
 
+    <!-- The form -->
+    <div class="form-popup" id="myForm">
+        <form method="post" action="popup.php" class="form-container" enctype="multipart/form-data">
+            <h1>Upload</h1>
+
+            <div class="input">
+				<input type="text" id="artname[]" name="artname" placeholder=" " />
+				<div class="label">
+				  <label for="artname">Enter Art Name </label>
+				</div>
+			</div>
+			<div class="input">
+				<input type="text" id="artdesc[]" name="artdesc" placeholder=" " />
+				<div class="label">
+				  <label for="artdesc">Description About Art </label>
+				</div>
+			</div>
+			<div class="input">
+				<input type="text" id="artistname[]" name="artistname" placeholder=" " />
+				<div class="label">
+				  <label for="artistname">Enter Artist name </label>
+				</div>
+			</div>
+			<div class="input">
+				<label>Select Image File:</label>
+				<input type="file" id="image" name="image" >
+			</div>
+			<button type="submit">Upload</button>
+
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		</div>
+
+        </form>
+    </div>
+
+					
 				<!-- Thumbnail -->
-					<section id="thumbnails">
+					<section id="thumbnails" >
 						<article>
-							<a class="thumbnail" href="images/fulls/lily1.jpg" data-position="left center"><img src="images/fulls/lily1.jpg" alt="" /></a>
+							<a class="thumbnail" href="images/fulls/lily2.jpg" data-position="left center" style="left: auto;"><img src="images/fulls/lily2.jpg" alt="" /></a>
 							<h2>Diam tempus accumsan</h2>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/lily2.jpg" ><img src="images/fulls/lily2.jpg" alt="" /></a>
-							<h2>Vivamus convallis libero</h2>
-							<p>Sed velit lacus, laoreet at venenatis convallis in lorem tincidunt.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/lily3.jpg" data-position="top center"><img src="images/fulls/lily3.jpg" alt="" /></a>
-							<h2>Nec accumsan enim felis</h2>
-							<p>Maecenas eleifend tellus ut turpis eleifend, vitae pretium faucibus.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/04.jpg"><img src="images/thumbs/04.jpg" alt="" /></a>
-							<h2>Donec maximus nisi eget</h2>
-							<p>Tristique in nulla vel congue. Sed sociis natoque parturient nascetur.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/05.jpg" data-position="top center"><img src="images/thumbs/05.jpg" alt="" /></a>
-							<h2>Nullam vitae nunc vulputate</h2>
-							<p>In pellentesque cursus velit id posuere. Donec vehicula nulla.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" /></a>
-							<h2>Phasellus magna faucibus</h2>
-							<p>Nulla dignissim libero maximus tellus varius dictum ut posuere magna.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" /></a>
-							<h2>Proin quis mauris</h2>
-							<p>Etiam ultricies, lorem quis efficitur porttitor, facilisis ante orci urna.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/08.jpg"><img src="images/thumbs/08.jpg" alt="" /></a>
-							<h2>Gravida quis varius enim</h2>
-							<p>Nunc egestas congue lorem. Nullam dictum placerat ex sapien tortor mattis.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/09.jpg"><img src="images/thumbs/09.jpg" alt="" /></a>
-							<h2>Morbi eget vitae adipiscing</h2>
-							<p>In quis vulputate dui. Maecenas metus elit, dictum praesent lacinia lacus.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg" alt="" /></a>
-							<h2>Habitant tristique senectus</h2>
-							<p>Vestibulum ante ipsum primis in faucibus orci luctus ac tincidunt dolor.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/11.jpg"><img src="images/thumbs/11.jpg" alt="" /></a>
-							<h2>Pharetra ex non faucibus</h2>
-							<p>Ut sed magna euismod leo laoreet congue. Fusce congue enim ultricies.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/12.jpg"><img src="images/thumbs/12.jpg" alt="" /></a>
-							<h2>Mattis lorem sodales</h2>
-							<p>Feugiat auctor leo massa, nec vestibulum nisl erat faucibus, rutrum nulla.</p>
-						</article>
 					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="copyright">
-							<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
-						</ul>
-					</footer>
+					
+				</div>
+					
 
 			</div>
 
