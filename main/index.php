@@ -1,3 +1,54 @@
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'art_gaery_db') or die("Unable to connect to database");
+$uname='s';
+//sql staments
+$sql1 = "SELECT artname from uploaded_art where '$uname' = uploaded_art.artistname" ;
+$sql2 = "SELECT artdesc from uploaded_art where '$uname' = uploaded_art.artistname ";
+$sql3 = "SELECT artimage from uploaded_art where '$uname' = uploaded_art.artistname ";
+
+
+
+//$sql = 'SELECT Id, art_title FROM arts';
+
+//print out the result
+$result = mysqli_query($conn, $sql1);
+
+
+
+    // $sql2 = "SELECT * from $sql where '$in2' = logintable.pass";
+    //$result2 = mysqli_query($conn, $sql2);
+    //$final2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+    session_start();
+    $row = $result->fetch_assoc();
+    $artname = $row['artname'];
+    $artdesc = $row['artdesc'];
+    $artimage = $row['artimage'];
+    
+    echo $artname;
+
+
+    $_SESSION['$artname'] = $row['artname'];
+    $_SESSION['$artdesc'] = $row['artdesc'];
+    $_SESSION['$artimage'] = $row['artimage'];
+
+    //new table in mysql to connect username and arrtist.html? enta like nav hage copy madidre prati time new page agat ala
+    //elrige ondond table agatta?
+    
+    // if (file_exists('../artpage/'.$uname.".php"))
+    // {
+    //     header("Location: ".'../artpage/'.$uname.".php");
+    // }
+    
+    // else
+    // {
+    //     echo copy('../artpage/base.php','../artpage/'.$uname.'.php');  //boom done
+    //     header("Location: ".'../artpage/'.$uname.".php");
+    //  }
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -182,9 +233,9 @@
               </h2>
             </div>
             <p>
-              We provide an awesome experience for our users when exploring the beautiful world of Artworks and make sure that they gain interest in this genre.
+              blah blah blah
             </p>
-            <a href="about.html">
+            <a href="">
               Read More
             </a>
           </div>
@@ -273,10 +324,10 @@
                 <p>
                   <img src="images/left-quote.png" alt="">
                   <span>
-                    Hi
+                    blah
                   </span>
                   <img src="images/right-quote.png" alt=""> <br>
-                  I like oil painting
+                  blah blah blah
                 </p>
               </div>
             </div>
@@ -293,10 +344,10 @@
                 <p>
                   <img src="images/left-quote.png" alt="">
                   <span>
-                    Hello
+                    blah
                   </span>
                   <img src="images/right-quote.png" alt=""> <br>
-                  I like digital art
+                  blah blah blah
                 </p>
               </div>
             </div>
@@ -313,10 +364,10 @@
                 <p>
                   <img src="images/left-quote.png" alt="">
                   <span>
-                    Hey
+                    blah b;ah
                   </span>
                   <img src="images/right-quote.png" alt=""> <br>
-                  I like drawing
+                  blah blah balg
                 </p>
               </div>
             </div>
@@ -390,11 +441,11 @@
     
     <div class="layout_padding2-top">
       <div class="row">
-        <h3>Mangalore </h3>
+        <h3>Some Place name </h3>
         <div class="col-md-6 px-0">
           <div class="map_container">
             <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62230.55701963217!2d74.78281505820313!3d12.881349100000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35a38c32929d9%3A0x90c7ffa6d6f571c1!2sThe%20Kadri%20Rocks%20-%20Art%20Gallery%20and%20Fine%20Art%20Store!5e0!3m2!1sen!2sin!4v1673977411443!5m2!1sen!2sin" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/place/UVA+Meridian+Convention+Centre/@13.6019378,74.707415,15.46z/data=!4m5!3m4!1s0x3bbc91be62b45ca9:0x8568c98391e2caf6!8m2!3d13.5930534!4d74.7133091" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -403,11 +454,11 @@
     <hr> 
     <div class="layout_padding2-top">
       <div class="row">
-        <h3> Udupi   </h3>
+        <h3> Some Place name</h3>
         <div class="col-md-6 px-0">
           <div class="map_container">
             <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62115.323727534356!2d74.68069865820313!3d13.337350299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbcbb765f3123c9%3A0xabbfdfded8ce720e!2sInayath%20Art%20Gallery!5e0!3m2!1sen!2sin!4v1673977193305!5m2!1sen!2sin" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/place/UVA+Meridian+Convention+Centre/@13.6019378,74.707415,15.46z/data=!4m5!3m4!1s0x3bbc91be62b45ca9:0x8568c98391e2caf6!8m2!3d13.5930534!4d74.7133091" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -416,11 +467,11 @@
     <hr>
     <div class="layout_padding2-top">
       <div class="row">
-        <h3>Bengaluru </h3>
+        <h3>Some Place name </h3>
         <div class="col-md-6 px-0">
           <div class="map_container">
             <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62203.605306219004!2d77.51801745820312!3d12.989411600000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16816c3294a9%3A0x69d86e822f4b337b!2sNational%20Gallery%20of%20Modern%20Art%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1673977618391!5m2!1sen!2sin" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/place/UVA+Meridian+Convention+Centre/@13.6019378,74.707415,15.46z/data=!4m5!3m4!1s0x3bbc91be62b45ca9:0x8568c98391e2caf6!8m2!3d13.5930534!4d74.7133091" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -446,7 +497,7 @@
             <a href="">
               <img src="images/location.png" alt="">
               <span>
-                Karnataka
+                place where you can't come
               </span>
             </a>
           </div>
