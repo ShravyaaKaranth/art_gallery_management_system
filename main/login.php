@@ -21,8 +21,20 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $uname = $row['username'];
     $_SESSION['$uname'] = $row['username'];
+    //new table in mysql to connect username and arrtist.html? enta like nav hage copy madidre prati time new page agat ala
+    //elrige ondond table agatta?
+    
+    if (file_exists('../artpage/'.$uname.".php"))
+    {
+        header("Location: ".'../artpage/'.$uname.".php");
+    }
+    
+    else
+    {
+        echo copy('../artpage/base2.php','../artpage/'.$uname.'.php');  //boom done
+        header("Location: ".'../artpage/'.$uname.".php");
 
-    header("Location: index_artist.php");
+    }
 
 }
 

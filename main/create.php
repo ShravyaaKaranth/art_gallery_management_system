@@ -53,7 +53,7 @@ if (!empty($_FILES["image"]["name"])) {
 
 
 echo $statusMsg;
-//header to redirect to new artist html
+header("Location: login.html");
 
 
 
